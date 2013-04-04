@@ -1,4 +1,4 @@
 logs.js
 =======
 
-Node.js and socket.io log live viewer.  Live log streaming via websockets (fs.watchFile - tail -f)
+Node.js and socket.io live log viewer. Live log streaming via websockets and fs.watchFile (aka tail -f)
