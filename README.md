@@ -1,9 +1,9 @@
 logs.js
 =======
 
-Node.js and socket.io live log viewer. Live log streaming via websockets and fs.watchFile (aka tail -f)
+Watch live log output on the web.  This is like tail -f but in a browser using Node.js and Socket.io
 
-Uses basic HTTP authentication by default, user/pass are in logs.js code
+Uses basic HTTP authentication, users are stored in config/config.json
 
 Friendly URLs:
 * logs.example.com
@@ -14,12 +14,19 @@ Friendly URLs:
 
 install
 =======
-cd into source directory
+git clone into logs.js directory
+cd logs.js
 npm install
+
+Edit config/config.json with the proper users and log locations
+
 ./logs.js
 
-or if you have forever installed there is a bash script in the bin dir (edit that script first, set your path to logs.js)
-bin/forever start
-bin/forever stop
-bin/forever restart
-bin/forever log
+or if you have forever installed there is a bash script called forever
+cd logs.js
+sudo ./forever start
+sudo ./forever stop
+sudo ./forever restart
+./forever log
+
+The port is configured in config/config.json, simply visit http://localhost:port to see logs.js in action

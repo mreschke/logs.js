@@ -5,7 +5,7 @@
 # mReschke 2013-03-22
 
 function start_service {
-	cd /tron/local/sys/www/logs.js/source/ && \
+	cd /tmp/logs.js/ && \
 	NODE_ENV=$environment forever \
 		start \
 		-a -l /dev/null \

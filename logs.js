@@ -92,14 +92,23 @@ app.get(config.get('base_url'), function (req, res) {
 	//List main log folders
 	log("Browse 'root' from session " + req.sessionID);
 	out = fs.readFileSync(__dirname + '/public/html/header.html');
-	out += fs.readFileSync(__dirname + '/public/html/locations.html');
+
+	var logPaths = config.get('logs');
+	out += "<table class='datatables'>";
+	for (logPath in logPaths) {
+		var name = logPath;
+		var path = logPaths[logPath];
+		out += "<tr><td><div class='location'></td>";
+		out += "<td><div class='item'><a href='/view" + path + "/'>" + name + "</a></div></tr>";
+	}
+	out += "</table>";
 	out += fs.readFileSync(__dirname + '/public/html/footer.html');
 	res.send(out);
 
 });
 app.get(config.get('base_url') + 'view/*', function (req, res) {
 	path = "/" + req.params.toString();
-	if (path.substring(path.length-1) == "/") {
+	if (path.substring(path.length-1) == "/" && fs.existsSync(path)) {
 		//Path is a folder, show contents of folder
 		log("Browse '" + path + "' from session " + req.sessionID);
 		fs.readdir(path, function (err, files) {

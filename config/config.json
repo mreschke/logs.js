@@ -4,6 +4,10 @@
 	"connect_url": "ws://",
 	"log_level": 0,
 	"users": {
-		"admin": "Password"
+		"admin": "password"
+	},
+	"logs": {
+		"Local Logs": "/var/log",
+		"Shared Logs": "/mnt/NAS/log"
 	}
 }
