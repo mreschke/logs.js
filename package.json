@@ -1,0 +1,15 @@
+{
+     "name": "logs.js",
+     "description": "Dynatron Log viewer and live tail via websockets",
+     "version": "0.0.1",
+     "author": "mReschke <mreschke@dynatronsoftware.com>",
+     "dependencies": {
+        "express": "3.1.0"
+        , "socket.io": "0.9.13"
+        , "nconf": "0.6.7"
+        , "connect": "2.7.3"
+        , "cookie": "0.0.5"
+        , "dateformat": "1.0.6-1.2.3"
+     }
+}
+

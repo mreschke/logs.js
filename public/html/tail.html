@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Websockets Tail Server</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+    <script language='javascript' src='/scripts/jquery-1.9.1.min.js' type='text/javascript'></script>    
+    <script language='javascript' src='/%resource%/socket.io.js' type='text/javascript'></script>
+    <style type="text/css" rel="stylesheet">body {margin: 5px;}</style> 
+</head>
+<body>
+    <pre id="tail"></pre>
+    <script type="text/javascript">
+        (function() {
+            socket = io.connect('%connect_url%', { 
+                'reconnect': true
+                , 'resource': '%resource%'
+            });
+            socket.on('connect', function () {});
+            socket.on('tail', function (data) {
+                $('#tail').append(data.join('\n'));
+                window.scroll(0, document.body.scrollHeight);
+            });
+        })();
+        </script>
+</body>
+</html>

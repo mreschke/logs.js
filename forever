@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# This will daemonize the server
+# See https://github.com/nodejitsu/forever
+# mReschke 2013-03-22
+
+function start_service {
+	cd /tron/local/sys/www/logs.js/source/ && \
+	NODE_ENV=$environment forever \
+		start \
+		-a -l /dev/null \
+		-o /var/log/logs.js.log \
+		-e /var/log/logs.js-error.log \
+		./logs.js
+}
+
+function stop_service {
+	forever stop logs.js
+}
+
+if [ "$1" == "start" -o "$1" == "restart" ]; then
+	stop_service
+	start_service
+elif [ "$1" == "stop" ]; then
+	stop_service
+elif [ "$1" == "log" ]; then
+	tail -f /var/log/logs.js.log
+else
+	echo "Use start, stop, or log to control this script"
+fi
+
+

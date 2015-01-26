@@ -1,0 +1,89 @@
+body {
+    margin: 5px;
+    font-size: 12px;
+    /*font-family:  arial, sans-serif, sans, FreeSans;*/
+	/*font-family: "Courier New", Courier, monospace;*/
+	font-family: monospace;
+}
+a {
+	text-decoration: none;
+	color: #333;
+}
+a:hover {
+	text-decoration: underline;
+}
+/*#header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	background-color: #fbfbfb;
+	border-bottom: 1px solid #acacac;
+	height: 50px;
+}*/
+/*#content {
+	margin-top: 50px;
+	padding: 5px;
+}*/
+/*#footer {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-color: #fbfbfb;
+	border-top: 1px solid #acacac;
+	height: 15px;
+	color: #ccc;
+}*/
+.datatables {
+
+}
+table {
+}
+td {
+	white-space: nowrap;
+	padding: 5px 5px 5px 0px;
+}
+.lbracket {
+	margin-left: 10px;
+	margin-right: 3px;
+}
+.rbracket {
+	margin-left: 3px;
+}
+.separator {
+	margin-left: 5px;
+	margin-right: 5px;
+	font-weight: bold;
+}
+.item {
+	/*line-height: 20px;*/
+}
+.item_tail {
+	/*margin-left: 10px;*/
+}
+.item_tail a,  .item_download a {
+	color: blue;
+}
+.item_size {
+	color: #999;
+	margin-left: 10px;
+}
+.location {
+    background: url("/images/server.png") top left no-repeat;
+    /*padding: 5px 5px 5px 28px;*/
+	width: 24px;
+	height: 24px;
+}
+.folder {
+    background: url("/images/folder.png") top left no-repeat;
+    /*padding: 5px 5px 5px 28px;*/
+	width: 24px;
+	height: 24px;
+}
+.file {
+    background: url("/images/file.png") top left no-repeat;
+    /*padding: 4px 5px 5px 28px;*/
+	width: 24px;
+	height: 24px;
+}
